@@ -11,7 +11,7 @@ export const Navbar = ({darkMode, setDarkMode }) => {
                </p>
             </Link>
             <button onClick={() => setDarkMode(!darkMode)} className='text-xl dark:bg-gray-50 dark:text-gray-900 bg-white border rounded-full px-2 py-1 hover:shadow-lg'>
-               {darkMode ? 'Light' : 'Dark'}
+               {darkMode ? 'Light 💡' : 'Dark 🌑'}
             </button>
          </div>
       </div>
