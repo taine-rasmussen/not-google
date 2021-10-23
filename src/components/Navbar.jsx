@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+// Components
+import { Search } from './Search'
+
 export const Navbar = ({darkMode, setDarkMode }) => {
    return (
       <div className='p-5 pb-0 flex flex-wrap sm:justify-between justift-center items-center border-b dark:border-gray-700 border-gray-200'>
@@ -14,6 +17,7 @@ export const Navbar = ({darkMode, setDarkMode }) => {
                {darkMode ? 'Light 💡' : 'Dark 🌑'}
             </button>
          </div>
+         <Search />
       </div>
    )
 }
