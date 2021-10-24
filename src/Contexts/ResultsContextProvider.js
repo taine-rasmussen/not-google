@@ -25,5 +25,12 @@ export const ResultsContextProvider = ({ children }) => {
       setResults(data)
       setIsLoading(false)
    }
+
+   return(
+      <ResultsContext.Provider value={{ getResults, results, searchTerm, setSearchTerm, isLoading}}>
+         {children}
+      </ResultsContext.Provider>
+   )
 }
+export const useResultContext = () => useContext(ResultsContext)
 
