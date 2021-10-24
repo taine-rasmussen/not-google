@@ -14,4 +14,11 @@ export const Results = () => {
 
    if (isLoading) return <Loading />;
 
+
+   switch(location.pathname){
+      case '/Search':
+         return 'Search';
+      default:
+         return 'ERROR!';
+   }
 }

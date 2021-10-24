@@ -10,7 +10,7 @@ export const ResultContextProvider = ({ children }) => {
 
   // GET api data, converts to json and updates results hook with new data
   const getResults = async (url) => {
-    setLoading(true);
+    setIsLoading(true);
     const res = await fetch(`${baseUrl}${url}`, {
       method: 'GET',
       headers: {
@@ -20,13 +20,13 @@ export const ResultContextProvider = ({ children }) => {
     });
     const data = await res.json();
     setResults(data)
-    setLoading(false)
+    setIsLoading(false)
   };
 
   return (
-    <StateContext.Provider value={{ getResults, results, searchTerm, setSearchTerm, isLoading }}>
+    <ResultsContext.Provider value={{ getResults, results, searchTerm, setSearchTerm, isLoading }}>
       {children}
-    </StateContext.Provider>
+    </ResultsContext.Provider>
   );
 };
 
