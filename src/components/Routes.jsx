@@ -2,7 +2,6 @@ import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 // Components
-
 import { Results } from './Results';
 
 
