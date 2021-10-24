@@ -12,9 +12,15 @@ export const Results = () => {
    const { results, isLoading, getResults, searchTerm } = useResultContext();
    const location = useLocation();
 
-   useEffect(() => {
-       getResults('/search/q=Calvin and Hobbes&num=40')
-   }, []);
+    useEffect(() => {
+      if (searchTerm != '') {
+         if (location.pathname === '/videos') {
+         getResults(`/search/q=${searchTerm} videos`)
+         } else {
+         getResults(`${location.pathname}/q=${searchTerm}&num=40`)
+         }
+      }
+   }, [searchTerm, location.pathname]);
 
    if (isLoading) return <Loading />;
 
