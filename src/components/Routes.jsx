@@ -15,7 +15,7 @@ export const Routes = () => {
             <Route exact path="/search">
                <Results />
             </Route>
-            <Route path="/images">
+            <Route exact path="/images">
                <Results />
             </Route>
             <Route path="/news">
