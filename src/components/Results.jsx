@@ -12,12 +12,23 @@ export const Results = () => {
    const { results, isLoading, getResults, searchTerm } = useResultContext();
    const location = useLocation();
 
+   useEffect(() => {
+       getResults('/search/q=Wellington&num=40')
+   }, []);
+
    if (isLoading) return <Loading />;
 
 
+
    switch(location.pathname){
-      case '/Search':
+      case '/search':
          return 'Search';
+      case '/news':
+         return 'News';
+      case '/images':
+         return 'Images';
+      case '/video':
+         return 'Video';
       default:
          return 'ERROR!';
    }
