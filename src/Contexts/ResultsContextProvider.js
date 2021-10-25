@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
 
+
 const ResultsContext = createContext();
 const baseUrl = 'https://google-search3.p.rapidapi.com/api/v1';
 
@@ -19,7 +20,7 @@ export const ResultContextProvider = ({ children }) => {
       },
     });
     const data = await res.json();
-    setResults(data)
+    setResults(data);
     setIsLoading(false)
   };
 

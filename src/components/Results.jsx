@@ -51,8 +51,6 @@ export const Results = () => {
                      ))}
                   </div>
                 )
-      case '/news':
-         return 'News';
       case '/video':
          return 'Video';
       default:
