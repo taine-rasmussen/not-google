@@ -7,7 +7,7 @@ const baseUrl = 'https://google-search3.p.rapidapi.com/api/v1';
 export const ResultContextProvider = ({ children }) => {
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('Calvin and Hobbes');
+  const [searchTerm, setSearchTerm] = useState('');
 
   // GET api data, converts to json and updates results hook with new data
   const getResults = async (url) => {
@@ -16,7 +16,7 @@ export const ResultContextProvider = ({ children }) => {
       method: 'GET',
       headers: {
         'x-rapidapi-host': 'google-search3.p.rapidapi.com',
-        'x-rapidapi-key': '662aa16bb4msh07d0ce307aa996bp1ada60jsn5c33a29c5e52'
+        'x-rapidapi-key': process.env.REACT_APP_API_KEY, 
       },
     });
     const data = await res.json();
