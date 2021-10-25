@@ -13,15 +13,16 @@ export const Results = () => {
    const location = useLocation();
 
     useEffect(() => {
-      if (searchTerm != '') {
+      if (searchTerm !== '') {
          if (location.pathname === '/videos') {
-         getResults(`/search/q=${searchTerm} videos`)
+         getResults(`/search/q=${searchTerm}videos`)
          } else {
          getResults(`${location.pathname}/q=${searchTerm}&num=40`)
          }
       }
    }, [searchTerm, location.pathname]);
 
+   // toggles loading animation while waiting for GET to return
    if (isLoading) return <Loading />;
 
 
@@ -50,9 +51,7 @@ export const Results = () => {
                         </a>
                      ))}
                   </div>
-                )
-      case '/video':
-         return 'Video';
+                ) 
       default:
          return 'ERROR!';
    }
