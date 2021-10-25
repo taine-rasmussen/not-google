@@ -11,7 +11,7 @@ import { Routes } from './components/Routes'
 
 function App() {
 
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(true)
   return (
     <div className={darkMode ? 'dark' : ''}>
       <div className='bg-gray-100 dark:bg-gray-900 dark:text-gray-200 min-h-screen'>
